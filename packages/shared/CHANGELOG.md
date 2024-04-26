@@ -1,5 +1,11 @@
 # shared
 
+## 0.8.0
+
+### Minor Changes
+
+- 0816b0b: fix dependabot issues
+
 ## 0.7.0
 
 ### Minor Changes
