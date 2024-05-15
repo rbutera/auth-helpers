@@ -62,7 +62,7 @@ export function createBrowserClient<
 		await deleteChunks(
 			key,
 			async (chunkName) => {
-				if (typeof cookies.get === 'function') {
+				if ('get' in cookies && typeof cookies.get === 'function') {
 					return await cookies.get(chunkName);
 				}
 				if (isBrowser()) {
@@ -71,7 +71,7 @@ export function createBrowserClient<
 				}
 			},
 			async (chunkName) => {
-				if (typeof cookies.remove === 'function') {
+				if ('remove' in cookies.remove && typeof cookies.remove === 'function') {
 					await cookies.remove(chunkName, {
 						...DEFAULT_COOKIE_OPTIONS,
 						...cookieOptions,
